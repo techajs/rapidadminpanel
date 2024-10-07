@@ -26,6 +26,7 @@ export const API = {
     viewOrderDetail: '/order/view/',
     enterprisebranch: '/enterprisebranch/get/',
     enterpriseOrder: '/enterprise/order/',
+    getEnterprise: '/enterprise',
     getNotificationUrl: '/notification/list/',
     createDeliveryBoyAddressUrl: '/daddressbook/create',
     getDeliveryBoyAddressListUrl: '/daddressbook/list/',
@@ -43,3 +44,24 @@ export const API = {
     deliveryBoyPlanningSetupDateList: '/order/deliveryboy/plan/list',
     checkPromoCodeUrl: 'promocode/check',
   };
+
+
+  export const BASE_URL=process.env.NEXT_PUBLIC_API_URL;
+
+  export const  formatDate=(isoString) => {
+    const date = new Date(isoString);
+  
+  // Get day, month, year, hours, and minutes
+  const day = String(date.getDate()).padStart(2, '0'); // Ensure two digits
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
+  const year = date.getFullYear();
+  
+  // Get hours and minutes in 24-hour format
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
+
+  // Construct the formatted string
+  return `${day}-${month}-${year} at ${hours}:${minutes}`;
+  }
+  
+ 
