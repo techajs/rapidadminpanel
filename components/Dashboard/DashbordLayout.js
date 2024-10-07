@@ -1,143 +1,128 @@
+import Image from "next/image";
 import CardDataStats from "../CardDataStats";
 import ChatCard from "../chat/ChatCard";
-// Use this import for the new app directory
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const DashboardLayout = () => {
   return (
     <>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
-        <CardDataStats title="Total Consumer" total="200" rate="0.43%" levelUp>
-          <svg
-            className="fill-primary dark:fill-white"
-            width="22"
-            height="16"
-            viewBox="0 0 22 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11 15.1156C4.19376 15.1156 0.825012 8.61876 0.687512 8.34376C0.584387 8.13751 0.584387 7.86251 0.687512 7.65626C0.825012 7.38126 4.19376 0.918762 11 0.918762C17.8063 0.918762 21.175 7.38126 21.3125 7.65626C21.4156 7.86251 21.4156 8.13751 21.3125 8.34376C21.175 8.61876 17.8063 15.1156 11 15.1156ZM2.26876 8.00001C3.02501 9.27189 5.98126 13.5688 11 13.5688C16.0188 13.5688 18.975 9.27189 19.7313 8.00001C18.975 6.72814 16.0188 2.43126 11 2.43126C5.98126 2.43126 3.02501 6.72814 2.26876 8.00001Z"
-              fill=""
-            />
-            <path
-              d="M11 10.9219C9.38438 10.9219 8.07812 9.61562 8.07812 8C8.07812 6.38438 9.38438 5.07812 11 5.07812C12.6156 5.07812 13.9219 6.38438 13.9219 8C13.9219 9.61562 12.6156 10.9219 11 10.9219ZM11 6.625C10.2437 6.625 9.625 7.24375 9.625 8C9.625 8.75625 10.2437 9.375 11 9.375C11.7563 9.375 12.375 8.75625 12.375 8C12.375 7.24375 11.7563 6.625 11 6.625Z"
-              fill=""
-            />
-          </svg>
+        <CardDataStats title="Total Consumer" total="08">
+          <div>
+            <i className="fa-solid fa-user-tie text-primary"></i>
+          </div>
         </CardDataStats>
-        <CardDataStats
-          title="Total Delivery boy"
-          total="200"
-          rate="0.43%"
-          levelUp
-        >
-          <svg
-            className="fill-primary dark:fill-white"
-            width="22"
-            height="16"
-            viewBox="0 0 22 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11 15.1156C4.19376 15.1156 0.825012 8.61876 0.687512 8.34376C0.584387 8.13751 0.584387 7.86251 0.687512 7.65626C0.825012 7.38126 4.19376 0.918762 11 0.918762C17.8063 0.918762 21.175 7.38126 21.3125 7.65626C21.4156 7.86251 21.4156 8.13751 21.3125 8.34376C21.175 8.61876 17.8063 15.1156 11 15.1156ZM2.26876 8.00001C3.02501 9.27189 5.98126 13.5688 11 13.5688C16.0188 13.5688 18.975 9.27189 19.7313 8.00001C18.975 6.72814 16.0188 2.43126 11 2.43126C5.98126 2.43126 3.02501 6.72814 2.26876 8.00001Z"
-              fill=""
-            />
-            <path
-              d="M11 10.9219C9.38438 10.9219 8.07812 9.61562 8.07812 8C8.07812 6.38438 9.38438 5.07812 11 5.07812C12.6156 5.07812 13.9219 6.38438 13.9219 8C13.9219 9.61562 12.6156 10.9219 11 10.9219ZM11 6.625C10.2437 6.625 9.625 7.24375 9.625 8C9.625 8.75625 10.2437 9.375 11 9.375C11.7563 9.375 12.375 8.75625 12.375 8C12.375 7.24375 11.7563 6.625 11 6.625Z"
-              fill=""
-            />
-          </svg>
+        <CardDataStats title="Total Delivery boy" total="52">
+          <div>
+            <i className="fa-solid fa-user text-primary"></i>
+          </div>
         </CardDataStats>
-        <CardDataStats
-          title="Total Enterprise"
-          total="200"
-          rate="0.43%"
-          levelUp
-        >
-          <svg
-            className="fill-primary dark:fill-white"
-            width="22"
-            height="16"
-            viewBox="0 0 22 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11 15.1156C4.19376 15.1156 0.825012 8.61876 0.687512 8.34376C0.584387 8.13751 0.584387 7.86251 0.687512 7.65626C0.825012 7.38126 4.19376 0.918762 11 0.918762C17.8063 0.918762 21.175 7.38126 21.3125 7.65626C21.4156 7.86251 21.4156 8.13751 21.3125 8.34376C21.175 8.61876 17.8063 15.1156 11 15.1156ZM2.26876 8.00001C3.02501 9.27189 5.98126 13.5688 11 13.5688C16.0188 13.5688 18.975 9.27189 19.7313 8.00001C18.975 6.72814 16.0188 2.43126 11 2.43126C5.98126 2.43126 3.02501 6.72814 2.26876 8.00001Z"
-              fill=""
-            />
-            <path
-              d="M11 10.9219C9.38438 10.9219 8.07812 9.61562 8.07812 8C8.07812 6.38438 9.38438 5.07812 11 5.07812C12.6156 5.07812 13.9219 6.38438 13.9219 8C13.9219 9.61562 12.6156 10.9219 11 10.9219ZM11 6.625C10.2437 6.625 9.625 7.24375 9.625 8C9.625 8.75625 10.2437 9.375 11 9.375C11.7563 9.375 12.375 8.75625 12.375 8C12.375 7.24375 11.7563 6.625 11 6.625Z"
-              fill=""
-            />
-          </svg>
+        <CardDataStats title="Total Enterprise" total="362">
+          <div>
+            <i className="fa-solid fa-cart-shopping text-primary"></i>
+          </div>
         </CardDataStats>
-        <CardDataStats title="Total Order" total="172" rate="0.43%" levelUp>
-          <svg
-            className="fill-primary dark:fill-white"
-            width="22"
-            height="16"
-            viewBox="0 0 22 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11 15.1156C4.19376 15.1156 0.825012 8.61876 0.687512 8.34376C0.584387 8.13751 0.584387 7.86251 0.687512 7.65626C0.825012 7.38126 4.19376 0.918762 11 0.918762C17.8063 0.918762 21.175 7.38126 21.3125 7.65626C21.4156 7.86251 21.4156 8.13751 21.3125 8.34376C21.175 8.61876 17.8063 15.1156 11 15.1156ZM2.26876 8.00001C3.02501 9.27189 5.98126 13.5688 11 13.5688C16.0188 13.5688 18.975 9.27189 19.7313 8.00001C18.975 6.72814 16.0188 2.43126 11 2.43126C5.98126 2.43126 3.02501 6.72814 2.26876 8.00001Z"
-              fill=""
-            />
-            <path
-              d="M11 10.9219C9.38438 10.9219 8.07812 9.61562 8.07812 8C8.07812 6.38438 9.38438 5.07812 11 5.07812C12.6156 5.07812 13.9219 6.38438 13.9219 8C13.9219 9.61562 12.6156 10.9219 11 10.9219ZM11 6.625C10.2437 6.625 9.625 7.24375 9.625 8C9.625 8.75625 10.2437 9.375 11 9.375C11.7563 9.375 12.375 8.75625 12.375 8C12.375 7.24375 11.7563 6.625 11 6.625Z"
-              fill=""
-            />
-          </svg>
+        <CardDataStats title="Total Order" total="12000">
+          <div>
+            <i className="fa-solid fa-truck text-primary"></i>
+          </div>
         </CardDataStats>
-        <CardDataStats title="Completed Order" total="150" rate="0.43%" levelUp>
-          <svg
-            className="fill-primary dark:fill-white"
-            width="22"
-            height="16"
-            viewBox="0 0 22 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11 15.1156C4.19376 15.1156 0.825012 8.61876 0.687512 8.34376C0.584387 8.13751 0.584387 7.86251 0.687512 7.65626C0.825012 7.38126 4.19376 0.918762 11 0.918762C17.8063 0.918762 21.175 7.38126 21.3125 7.65626C21.4156 7.86251 21.4156 8.13751 21.3125 8.34376C21.175 8.61876 17.8063 15.1156 11 15.1156ZM2.26876 8.00001C3.02501 9.27189 5.98126 13.5688 11 13.5688C16.0188 13.5688 18.975 9.27189 19.7313 8.00001C18.975 6.72814 16.0188 2.43126 11 2.43126C5.98126 2.43126 3.02501 6.72814 2.26876 8.00001Z"
-              fill=""
-            />
-            <path
-              d="M11 10.9219C9.38438 10.9219 8.07812 9.61562 8.07812 8C8.07812 6.38438 9.38438 5.07812 11 5.07812C12.6156 5.07812 13.9219 6.38438 13.9219 8C13.9219 9.61562 12.6156 10.9219 11 10.9219ZM11 6.625C10.2437 6.625 9.625 7.24375 9.625 8C9.625 8.75625 10.2437 9.375 11 9.375C11.7563 9.375 12.375 8.75625 12.375 8C12.375 7.24375 11.7563 6.625 11 6.625Z"
-              fill=""
-            />
-          </svg>
+        <CardDataStats title="Completed Order" total="11500">
+          <div>
+            <i className="fa-solid fa-clipboard-check text-primary"></i>
+          </div>
         </CardDataStats>
-        <CardDataStats
-          title="Cancelled Order"
-          total="12"
-          rate="0.10%"
-          levelDown
-        >
-          <svg
-            className="fill-primary dark:fill-white"
-            width="22"
-            height="16"
-            viewBox="0 0 22 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11 15.1156C4.19376 15.1156 0.825012 8.61876 0.687512 8.34376C0.584387 8.13751 0.584387 7.86251 0.687512 7.65626C0.825012 7.38126 4.19376 0.918762 11 0.918762C17.8063 0.918762 21.175 7.38126 21.3125 7.65626C21.4156 7.86251 21.4156 8.13751 21.3125 8.34376C21.175 8.61876 17.8063 15.1156 11 15.1156ZM2.26876 8.00001C3.02501 9.27189 5.98126 13.5688 11 13.5688C16.0188 13.5688 18.975 9.27189 19.7313 8.00001C18.975 6.72814 16.0188 2.43126 11 2.43126C5.98126 2.43126 3.02501 6.72814 2.26876 8.00001Z"
-              fill=""
-            />
-            <path
-              d="M11 10.9219C9.38438 10.9219 8.07812 9.61562 8.07812 8C8.07812 6.38438 9.38438 5.07812 11 5.07812C12.6156 5.07812 13.9219 6.38438 13.9219 8C13.9219 9.61562 12.6156 10.9219 11 10.9219ZM11 6.625C10.2437 6.625 9.625 7.24375 9.625 8C9.625 8.75625 10.2437 9.375 11 9.375C11.7563 9.375 12.375 8.75625 12.375 8C12.375 7.24375 11.7563 6.625 11 6.625Z"
-              fill=""
-            />
-          </svg>
+        <CardDataStats title="Cancelled Order" total="486">
+          <div>
+            <i className="fa-solid fa-file-excel text-primary"></i>
+          </div>
         </CardDataStats>
       </div>
-      <div className="mt-4 grid grid-cols-12 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
-        <ChatCard />
+
+      {/* New Request Card starts here */}
+      <div className="mt-4 grid grid-cols-3 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5">
+        <div className="flex items-center p-4 bg-white shadow-md rounded-lg h-20 m-2">
+          <Image
+            className="mr-4"
+            src="/images/vector/request-Icon.png"
+            alt="Icon"
+            width={28}
+            height={28}
+          />
+          <div>
+            <h4 className="text-md font-semibold text-gray-900 mb-0">
+              12 new requests
+            </h4>
+            <p className="text-sm font-normal text-gray-900 mb-0">
+              You recently missed 10 connections
+            </p>
+          </div>
+          <i className="fa-solid fa-arrow-right ml-auto text-gray-500"></i>
+        </div>
+
+        <div className="flex items-center p-4 bg-white shadow-md rounded-lg h-20 m-2">
+          <Image
+            className="mr-4"
+            src="/images/vector/manage-orderIcon.png"
+            alt="Icon"
+            width={25}
+            height={30}
+          />
+          <div>
+            <h4 className="text-md font-semibold text-gray-900 mb-0">
+              Manage delivery orders
+            </h4>
+          </div>
+          <i className="fa-solid fa-arrow-right ml-auto text-gray-500"></i>
+        </div>
+
+        <div className="flex items-center p-4 bg-white shadow-md rounded-lg h-20 m-2">
+          <Image
+            className="mr-4"
+            src="/images/vector/manage-adsIcon.png"
+            alt="Icon"
+            width={25}
+            height={25}
+          />
+          <div>
+            <h4 className="text-md font-semibold text-gray-900 mb-0">
+              Manage Ads
+            </h4>
+          </div>
+          <i className="fa-solid fa-arrow-right ml-auto text-gray-500"></i>
+        </div>
+
+        <div className="flex items-center p-4 bg-white shadow-md rounded-lg h-20 m-2">
+          <Image
+            className="mr-4"
+            src="/images/vector/manage-paymentIcon.png"
+            alt="Icon"
+            width={25}
+            height={25}
+          />
+          <div>
+            <h4 className="text-md font-semibold text-gray-900 mb-0">
+              Manage Payments & Transactions
+            </h4>
+          </div>
+          <i className="fa-solid fa-arrow-right ml-auto text-gray-500"></i>
+        </div>
+
+        <div className="flex items-center p-4 bg-white shadow-md rounded-lg h-20 m-2">
+          <Image
+            className="mr-4"
+            src="/images/vector/manage-schedulesIcon.png"
+            alt="Icon"
+            width={25}
+            height={25}
+          />
+          <div>
+            <h4 className="text-md font-semibold text-gray-900 mb-0">
+              Manage Schedules
+            </h4>
+          </div>
+          <i className="fa-solid fa-arrow-right ml-auto text-gray-500"></i>
+        </div>
       </div>
     </>
   );
