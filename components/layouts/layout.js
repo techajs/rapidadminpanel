@@ -3,11 +3,13 @@
 import React, { useState } from "react";
 import Sidebar from "../sidebar/Sidebar";
 import Header from "../Header";
+import Loader from "../common/Loader";
 
 export default function Layout({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <>
+    <Loader />
       {/* <!-- ===== Page Wrapper Start ===== --> */}
       <div className="flex">
         {/* <!-- ===== Sidebar Start ===== --> */}
@@ -22,7 +24,7 @@ export default function Layout({ children }) {
 
           {/* <!-- ===== Main Content Start ===== --> */}
           <main>
-            <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
+            <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10 ">
               {children}
             </div>
           </main>

@@ -10,12 +10,12 @@ export const getVehicleData = () => {
             const data = successResponse[0]._response;
             resolve(data);
           } else {
-            reject(new Error("Failed to get vehicle types"));
+            reject([]);
           }
         },
         (errorResponse) => {
        
-          reject(new Error("Error fetching vehicle types"));
+          reject([]);
         }
       );
     });

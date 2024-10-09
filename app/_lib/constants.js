@@ -1,3 +1,5 @@
+import { getAdmindashboard } from "./action";
+
 export const HTTPMethod = {POST: 'post',GET: 'get',PUT: 'put',DELETE: 'delete',};
 export const API = {
     loginAuthenticateUrl: '/authuser/login',
@@ -27,6 +29,7 @@ export const API = {
     enterprisebranch: '/enterprisebranch/get/',
     enterpriseOrder: '/enterprise/order/',
     getEnterprise: '/enterprise',
+    getAdmindashboard:'/admin/dashboard',
     getNotificationUrl: '/notification/list/',
     createDeliveryBoyAddressUrl: '/daddressbook/create',
     getDeliveryBoyAddressListUrl: '/daddressbook/list/',
@@ -43,6 +46,7 @@ export const API = {
     cancelOrderUrl: '/order/cancel',
     deliveryBoyPlanningSetupDateList: '/order/deliveryboy/plan/list',
     checkPromoCodeUrl: 'promocode/check',
+    updateJoinStatus:'/joinrequest/action',
   };
 
 
@@ -65,3 +69,15 @@ export const API = {
   }
   
  
+  export const getRole = (role) => {
+    switch (role) {
+      case "DELIVERY_BOY":
+        return "Delivery boy";
+      case "ENTERPRISE":
+        return "Enterprise";
+      case "CONSUMER":
+        return "Pickup & Dropoff";
+      default:
+        return "Unknown role";
+    }
+  };
